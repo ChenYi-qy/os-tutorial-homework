@@ -14,5 +14,5 @@ through dynamic binary translation and provides a set of different hardware and 
 the machine.
 
 ## Tasks:
-1、Install nasm -> sudo apt-get install nasm(ubuntu)
-2、Get familar with concepts like: linux, terminal, compiler, emulator, nasm, qemu 
+* Install nasm -> sudo apt-get install nasm(ubuntu)
+* Get familar with concepts like: linux, terminal, compiler, emulator, nasm, qemu 
