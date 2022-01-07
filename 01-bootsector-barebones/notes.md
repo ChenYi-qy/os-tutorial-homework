@@ -1,21 +1,16 @@
 ## Some Concepts:
-1、BIOS -> Basic Input and Output System,电脑在启动的时候必须加载操作系统(可能是从硬盘、USB等)，
-这个时候还没有文件系统，但我们有BIOS，一段会在电脑开启的时候从芯片加载进内存的软件程序，BIOS提供
-自动检测和对电脑设备的最基本的控制(屏幕，键盘，硬件等)，BIOS在完成一些硬件的low-level test(例如
-内存是否正常工作)后会启动存储设备的操作系统。由于BIOS没有文件系统的概念，它只能读取指定扇区的数据
-，而最容易发现操作系统的地方肯定是第一个磁盘的第一个扇区(例如：Cylinder0,Head 0,Sector 0),但我们的
-磁盘也可能没有操作系统，对BIOS来说，它必须具备检测启动扇区存储的数据是boot code还是data,因为这两个
-都可以被解释为CPU指令。
+* BIOS -> Basic Input and Output System, a collection of software routines that are initially loaded from chip into memory and initialised when the computer is switched on.
+After BIOS completes some low-level tests of the hardware, it must boot the operating system stored on one of your devices(floopy disk, hard disk and so on), since BIOS has no 
+notion of file system now, BIOS must simply load a file that represents your operating system. So the first step is to find the location of our operating system and the easiest place for
+BIOS to find our OS is in the first sector if one of the disks(i.e. Cylinder0, Head0, Sector0), knon as **boot sector**. But sicne our disks may not contain an operating system, so it is 
+important for ous BIOS to determine whether the boot sector of a particular disk is boot code that is intended for execution or simply data. Note that the CPU can not differentiate between code
+and data: both can be intepreted as CPU instructions. Again, an unsophisticated way adopted here by BIOS, whereby **the last two bytes of an intended boot sector must be set to the magic number 0xaa55** 
 
-如果启动扇区的最后两个字节为"magic number" 0xaa55的话，BIOS就会识别为boot code,并将boot code加载进
-内存，CPU就开始指令the first boot sector it finds that ends with the magic number
-
-2、CPU Emulator -> translate low-level display device instructions into pixel rendering on a 
-desktop window.
+* Assembler -> Translate assemble code to raw machine code. 
 
 
 ## Goal: Create a file which the BIOS interprets as a bootable disk
-1、将以下512个字节写进binary editor后者写一段简单的汇编语言
+1. Writing following 521 bytes into binary editor.
 ```
   ; Infinite loop (e9 fd ff)
 loop:
@@ -27,5 +22,8 @@ times 510-($-$$) db 0
 dw 0xaa55 
   
 ```
-2、nasm -f bin boot_sect_simple.asm -o boot_sect_simple.bin -> 编译
-3、执行boot code -> qemu boot_sect_simple.bin(ubuntu下需要加上--nographic and/or --curses flags)  
+2. nasm -f bin boot_sect_simple.asm -o boot_sect_simple.bin -> insruct nasm to produce raw machine code from assemble code 
+3. qemu-system-x86_64 boot_sect_simple.bin --nographic --curses -> execute boot code 
+
+## Results
+You will see a window open which says "Booting from Hard Disk..." and nothing else:)
