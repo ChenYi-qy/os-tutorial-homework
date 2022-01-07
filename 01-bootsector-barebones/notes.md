@@ -28,4 +28,4 @@ dw 0xaa55
 ## Results:
 
 ![](https://user-images.githubusercontent.com/58657543/148485046-94c92174-97cb-4ceb-9549-331b6c42267f.png)
-* Note: (You keep waiting cause our code is an Infinite loop)
+* Note: (You keep waiting cause our code is an Infinite loop.)
