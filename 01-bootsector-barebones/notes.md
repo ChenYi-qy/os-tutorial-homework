@@ -10,7 +10,7 @@ and data: both can be intepreted as CPU instructions. Again, an unsophisticated 
 
 
 ## Goal: Create a file which the BIOS interprets as a bootable disk
-1. Writing following 521 bytes into binary editor.
+1. Writing following assemble code into your text editor.
 ```
   ; Infinite loop (e9 fd ff)
 loop:
@@ -25,5 +25,7 @@ dw 0xaa55
 2. nasm -f bin boot_sect_simple.asm -o boot_sect_simple.bin -> insruct nasm to produce raw machine code from assemble code 
 3. qemu-system-x86_64 boot_sect_simple.bin --nographic --curses -> execute boot code 
 
-## Results
-You will see a window open which says "Booting from Hard Disk..." and nothing else:)
+## Results:
+
+![](https://user-images.githubusercontent.com/58657543/148485046-94c92174-97cb-4ceb-9549-331b6c42267f.png)
+* Note: (You keep waiting cause our code is an Infinite loop)
