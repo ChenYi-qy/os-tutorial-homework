@@ -22,7 +22,7 @@ causes the screen-related ISR to be invoked and interrupt 0x13: the disk-related
 
 ## Goal: Make our previously silent boot sector print some text
 1. write our hello program
-``` 
+```assembly 
 mov ah, 0x0e ; tty mode
 mov al, 'H'
 int 0x10
@@ -46,7 +46,10 @@ dw 0xaa55
 
 
 
+
 ## Reuslts:
   
+
+
 
 
