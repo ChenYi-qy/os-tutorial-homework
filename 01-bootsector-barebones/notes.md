@@ -22,8 +22,8 @@ times 510-($-$$) db 0
 dw 0xaa55 
   
 ```
-2.`nasm -f bin boot_sect_simple.asm -o boot_sect_simple.bin` -> insruct nasm to produce raw machine code from assemble code 
-3.`qemu-system-x86_64 boot_sect_simple.bin --nographic --curses` -> execute boot code 
+2. `nasm -f bin boot_sect_simple.asm -o boot_sect_simple.bin` -> instruct nasm to produce raw machine code from assemble code 
+3. `qemu-system-x86_64 boot_sect_simple.bin --nographic --curses` -> execute boot code 
 
 ## Results:
 
