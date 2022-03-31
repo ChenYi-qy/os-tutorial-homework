@@ -2,6 +2,8 @@
 The stack is really just a simple solution to the following inconvenience: the CPU has a limited number of **registers** for the temporary storage our routine's local varibales, but we often
 need more temporary storage than will fit into these registers; now, we can obviously make use of our main memory, but specifiying specific memory address when reading and writing is inconvenient
 , especially since we do not care exactly where the data is to be stored, only that we can retrieve it easily enough. The stack is also useful for argument passing to realise function calls.
+**Note**:
+We can not push and pop single bytes onto and off the stack:in 16-bit mode, the stack works only on 16-bit boundaries.
 
 ## How to implement a stack
 The CPU offers two instructions **push** and **pop** that allow us, repectively, to store a value and retrieve a value from the top the stack, and so without worrying exactly where they are stored.
