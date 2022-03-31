@@ -2,9 +2,7 @@
 
 ## Strings
 Define strings like bytes, but terminate them with a null-byte(like C) to be ablle to determine
-their end. 
--> mystring:
-        db 'Hello Wolrd',0
+their end -> `mystring: db 'Hello Wolrd',0`
 
 ## Calling Functions
 At the CPU level a function is nothing more than a jump to the address of a
