@@ -10,6 +10,7 @@
 * 08-32bit-print ->
 * 09-32bit-gdt ->
 * 10-32bit-enter -> 
+* 11
 
 
  
