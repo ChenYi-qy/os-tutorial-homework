@@ -22,6 +22,6 @@ offset our address from the segment register appropriate for the context of our 
 "16 * 0x4d0 + 0x20".
 
 ## Conclusion
-Segment-based addressing allows us to reach futehr into memory, up a litle over 1MB(0xff*16+0xff).
+Segment-based addressing allows us to reach futher into memory, up a litle over 1MB(0xff*16+0xff).
 
 
