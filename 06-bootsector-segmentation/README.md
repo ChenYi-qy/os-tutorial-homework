@@ -5,7 +5,7 @@ bootstrap the rest of the code from the disk into memory and then begin executin
 
 * **The origin of segmentation**:
 When the CPU runs in its intial 16-bit real mode, the maximum size of the registers is 16 bits, which means the highest address we can reference in an instuction is 0xffff, which amounts by today's standards to a measily 64KB. But a day-to-day operating systems would never sit comfortably
-in such a tight box, so it is important to understand the solutionb, of segmentation, to this problem.
+in such a tight box, so it is important to understand the solution of segmentation, to this problem.
 
 * **Segmentation**: To get around this limit, the CPU designers added a few more special registers, **cs,ds,ss and es**. called **segment** registers. We can imagine main memory as being divided into **segments** that are indexed by segmemt regiters. 
 when we specify a 16-bit address, the CPU automatically calculates the absolute address as the appropriate segment's start address offseted by our specified address. By **appropriate segment**, I mean that, unless explicitly told otherwise, the CPU will
