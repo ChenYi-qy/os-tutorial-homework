@@ -3,7 +3,8 @@
 
 * Video Graphics Array(VGA): A video display controller, the video memory of the VGA is mapped to the PC's memory via a window. The VGA memory starts address **0xb8000** and it has a text mode which is useful to avoid manipulating direct pieels.
 The formula for accessing a specific character on the 80x25 grid is:
-``` 0xb8000 + 2 * (row * 80 + col)
+``` 
+0xb8000 + 2 * (row * 80 + col)
 ``` 
 
 * Global Descripter Table(GDT): A complex data structure in memory, Used to define momory segments and their protected-mode attributes. Once we have defined the GDT, we can use
@@ -16,7 +17,8 @@ a special instruction to load it into the CPU. And we do not use the old method 
 
 * The main differences in 32-bit protected mode:
 1. Registers are extended to 32 bits, with their **full**  capacity being accessed by prefixing an **e** to the register name: 
-``` mov ebx, 0x274fe8fe 
+``` 
+mov ebx, 0x274fe8fe 
 ```
 2. There are two aditional general purpose registers: **fs**, and **gs**
 3. 32-bit memory offsets are available, so an offset can reference a whopping 4GB of memory
